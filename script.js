@@ -1,24 +1,26 @@
 "use strict";
 
-function switchTabs_Service() {
+function switchTabsService() {
   document.querySelector(".service_tabs").addEventListener("click", (event) => {
-    document.querySelector(".service_item.active").classList.remove("active");
-    event.target.classList.add("active");
+    if (event.target.classList.contains("service_item")) {
+      document.querySelector(".service_item.active").classList.remove("active");
+      event.target.classList.add("active");
 
-    let attributeClick = event.target.getAttribute("data-service_title");
-    let contentClick = document.querySelector(
-      `.service_descriptions>li[data-service_content = ${attributeClick}]`
-    );
+      let attributeClick = event.target.getAttribute("data-service_title");
+      let contentClick = document.querySelector(
+        `.service_descriptions>li[data-service_content = ${attributeClick}]`
+      );
 
-    document
-      .querySelector(".service_description_item.active")
-      .classList.remove("active");
-    contentClick.classList.add("active");
+      document
+        .querySelector(".service_description_item.active")
+        .classList.remove("active");
+      contentClick.classList.add("active");
+    }
   });
 }
-switchTabs_Service();
+switchTabsService();
 
-function switchTabs_Works() {
+function switchTabsWorks() {
   document
     .querySelector(".work_filter_tabs")
     .addEventListener("click", (event) => {
@@ -48,9 +50,9 @@ function switchTabs_Works() {
       }
     });
 }
-switchTabs_Works();
+switchTabsWorks();
 
-function loadNew_Work() {
+function loadNewWork() {
   let startNewImage = 1;
 
   document
@@ -107,9 +109,9 @@ function loadNew_Work() {
       }, 2000);
     });
 }
-loadNew_Work();
+loadNewWork();
 
-function switchTabs_Feedback() {
+function switchTabsFeedback() {
   document
     .querySelector(".feedback_tabs")
     .addEventListener("click", (event) => {
@@ -133,9 +135,9 @@ function switchTabs_Feedback() {
       }
     });
 }
-switchTabs_Feedback();
+switchTabsFeedback();
 
-function switchTabsButtons_Feedback() {
+function switchTabsButtonsFeedback() {
   let tabsCollection = document.querySelectorAll(".feedback_tabs_item");
   let descriptionCollection = document.querySelectorAll(".feedback_item");
   let firstTab = tabsCollection[0];
@@ -175,4 +177,4 @@ function switchTabsButtons_Feedback() {
       }
     });
 }
-switchTabsButtons_Feedback();
+switchTabsButtonsFeedback();

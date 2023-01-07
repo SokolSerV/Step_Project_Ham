@@ -103,6 +103,10 @@
   position: absolute;
 }
 
+.header_search:hover path {
+  fill: #18cfab;
+}
+
 /*? -------------------------SECTION HOME------------------------- */
 
 .header_home {
@@ -450,6 +454,13 @@
   display: flex;
   justify-content: center;
   gap: 3px;
+}
+
+.work_icon:hover path {
+  fill: #18cfab;
+}
+.work_icon:hover rect {
+  stroke: #18cfab;
 }
 
 .item_description_title {
